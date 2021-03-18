@@ -17,9 +17,11 @@ The default setting for jslint does not allow you to export an undefined object 
 For example, I may have some object like this (I do this often for static definitions of actions for redux):
 ```
 export default {
-    SET_ACCOUNT: 'SET_ACCOUNT',
-    UNSET_ACCOUNT: 'UNSET_ACCOUNT'
-};
+    SET_PROJECT: 'SET_PROJECT',
+    CLEAR_PROJECT: 'CLEAR_PROJECT',
+    TOGGLE_USE_CODES: 'TOGGLE_USE_CODES',
+    TOGGLE_USE_ROLES: 'TOGGLE_USE_ROLES'
+}
 ```
 The default setting for jslint flags this.
 
