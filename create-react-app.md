@@ -58,7 +58,7 @@ For my example above, my configuration object looks like this:
 
   ---
 
-  ## Modify Webpack Config [](#webpack)
+  ## Modify Webpack Config <a name="webpack"></a>
 
  ### Step 1:
   Install `react-app-rewired` as a dev dependency
