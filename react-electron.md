@@ -36,4 +36,4 @@ Many sites and forums mention `nodeIntegration` and can't agree on whether or no
 Add this `target` property to your webpack config:
 ```target: "electron-renderer"```
 
-If you're using create-react-app, you can read the instructions on how to [modify webpack config](create-react-app#webpack) to see how to add this property.
+If you're using create-react-app, you can read the instructions on how to [modify webpack config](create-react-app.md#webpack) to see how to add this property.
