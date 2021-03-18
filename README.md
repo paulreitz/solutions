@@ -7,3 +7,7 @@ So I've created this repo as a sort of one stop notebook of problems I've encoun
 ## [create-react-app](create-react-app.md):
 
 Ways to modify different configurations that are "black boxed" by `create-react-app`.
+
+## [React and Electron](react-electron.md):
+
+Front end issues when working with electron, specifically related to React.
