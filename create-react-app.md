@@ -9,7 +9,7 @@ Surprisingly, as I was looking for solutions to the issues below, I quite often 
 1. [Customize Webpack Config](#webpack)
 ---
 
-## Customizing jslint [](#jslint)
+## Customizing jslint <a name="jslint"></a>
 **TL;DR - Why I need this**
 
 The default setting for jslint does not allow you to export an undefined object as the default. I do this quite often as a short hand, rather than the three step process of declaring a named constant, assigning it a value, then exporting as the default. 
