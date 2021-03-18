@@ -6,7 +6,7 @@ So I've created this repo as a sort of one stop notebook of problems I've encoun
 # Contents:
 ## [create-react-app](create-react-app.md):
 
-Ways to modify different configurations that are "black boxed" by `create-react-app`.
+Ways to modify different configurations that are "black boxed" by `create-react-app`, **without** the need to use `eject`.
 
 ## [React and Electron](react-electron.md):
 
