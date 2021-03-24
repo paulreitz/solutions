@@ -7,6 +7,7 @@ Surprisingly, as I was looking for solutions to the issues below, I quite often 
 ## Contents
 1. [Customize jslint](#jslint)
 1. [Customize Webpack Config](#webpack)
+1. [Exclude Files from Live Reload](#reload)
 ---
 
 ## Customizing jslint <a name="jslint"></a>
@@ -92,3 +93,31 @@ In the scripts section of `package.json`, change `react-scripts` to `react-app-r
   }
 ```
 Note: This change is not necessary for `eject`.
+
+---
+
+## Exclude Files From Live Reload <a name="reload"></a>
+### The problem:
+When working in development with create-react-app, the page continuously loads as you're making changes. This is usually a good thing. But there are times when this can cause problems, and even behavior that doesn't reflect how the final product will behave.
+
+For example, I first encountered this as a problem when I included a feature to upload a profile image. There was no need to update the page, but the file saved to the images folder was considered a change. This caused unexpected behavior: such as refreshing the page before the new path was updated in redux - something that would not happen in production.
+
+### The Solution:
+Use the method described above to override the default webpack configuration. Put the following code in your `config-overrides.js` file:
+```
+module.exports = function override(config, env) {
+    if (env === 'development') {
+        const pluginIndex = config.plugins.findIndex(e => {
+            return e.constructor.name === 'ReactRefreshPlugin';
+        });
+        if (pluginIndex > -1) {
+            config.plugins[pluginIndex].options.exclude = [/node_modules/i, /public/i];
+        }
+    }
+    return config;
+}
+```
+### What this is doing:
+1. First we check the value of `env` to see if we're in the development environment. This change is only necessary in development.
+1. We need to make a change to one of the plugins, which are in an array. So we need to find the index of the plugin we need to modify: `ReactRefreshPlugin`
+1. Lastly, we need to change the value of `options.exclude`. This is set to only exclude the `node_modules` folder. In this example we also tell it to exclude the `public` folder.
